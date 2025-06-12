@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서혀니 포트폴리오</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div> <header class="navbar">
+        <div class="nav-left">
+            <a href="#home" class="site-logo">JSH</a> </div>
+        <div class="nav-right">
+            <i class="fas fa-search search-icon"></i>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+            </div>
+            <i class="fas fa-bars menu-toggle"></i> </div>
+    </header>
+
+    <aside class="sidebar">
+        <i class="fas fa-times close-sidebar"></i> <nav class="sidebar-nav">
+            <a href="#home" class="sidebar-item">HOME</a>
+            <a href="#about" class="sidebar-item">ABOUT ME</a>
+            <a href="#portfolio" class="sidebar-item">PORTFOLIO</a>
+            <a href="#education" class="sidebar-item">EDUCATION & SKILLS</a>
+            <a href="#awards" class="sidebar-item">AWARDS</a>
+            <a href="#contact" class="sidebar-item">CONTACT</a>
+        </nav>
+        <div class="sidebar-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+    </aside>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="name-container">
+                <h1 class="korean-name text-reveal" data-aos="no-animation" data-aos-duration="1500">PORTFORLIO</h1>
+                <p class="tagline text-reveal" data-aos="no-animation" data-aos-duration="1500" data-aos-delay="200">창의적인 아이디어로 매력적인 영상 콘텐츠를 만듭니다.</p>
+                <h2 class="chinese-name text-reveal" data-aos="no-animation" data-aos-duration="1500" data-aos-delay="400">콘텐츠 기획자 ㅣ 장서현</h2>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2 class="section-title white-text" data-aos="fade-up">콘텐츠 파일럿</h2>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="100">
+                저는 단순한 개발자를 넘어, 콘텐츠의 흐름을 이해하고 사용자와 소통하는 파일럿입니다. 
+                기술과 아이디어를 융합하여 혁신적인 경험을 만들어 나갑니다.
+            </p>
+            <div class="strengths-grid">
+                <div class="strength-item" data-aos="zoom-in" data-aos-delay="200" data-strength-id="1">
+                    <i class="fas fa-lightbulb strength-icon"></i>
+                    <h3>기획력과 창의력</h3>
+                    <p>클릭하여 자세한 내용을 확인하세요.</p>
+                </div>
+                <div class="strength-item" data-aos="zoom-in" data-aos-delay="300" data-strength-id="2">
+                    <i class="fas fa-comments strength-icon"></i>
+                    <h3>커뮤니케이션 능력</h3>
+                    <p>클릭하여 자세한 내용을 확인하세요.</p>
+                </div>
+                <div class="strength-item" data-aos="zoom-in" data-aos-delay="400" data-strength-id="3">
+                    <i class="fas fa-rocket strength-icon"></i>
+                    <h3>연출과 편집 기술</h3>
+                    <p>클릭하여 자세한 내용을 확인하세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="strength-modal-1" class="strength-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>기획력과 창의력</h2>
+                <p>어릴 적부터 동생들을 위해 인형극과 이야기를 직접 만들어내며 자연스럽게 기획의 재미를 배웠습니다. 학창시절 연극부 부장을 맡아 극본부터 연출까지 책임지며 무대 경험을 쌓았고, 대학에서는 다양한 영상 프로젝트와 공모전을 통해 기획 아이디어를 현실로 구현해왔습니다.</p>
+                <p>이러한 경험을 통해 저의 기획력과 창의력을 보여드릴 수 있습니다.</p>
+            </div>
+        </div>
+        <div id="strength-modal-2" class="strength-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>커뮤니케이션 능력</h2>
+                <p>학창시절 반장과 학생회 활동을 통해 다양한 의견을 조율하고 이끌어가는 법을 배웠습니다. 팀 프로젝트에서 원활한 소통과 협업으로 영상 완성도를 높이며, 사람과의 관계를 중요시하는 태도를 실천하고 있습니다. </p>
+                <p>MBC에 근무하면서 이를 증명하겠습니다.</p>
+            </div>
+        </div>
+        <div id="strength-modal-3" class="strength-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>연출과 편집 기술</h2>
+                <p>다양한 장르의 영상을 직접 촬영하고 편집하면서 실무 역량을 길렀습니다. 빠른 편집 템포부터 감성적인 연출까지, 전달하고자 하는 메시지에 맞춘 영상 스타일을 구현할 수 있습니다. 여러 영상 편집 툴에 능숙합니다.</p>
+                <p>새로운 기술이라도 빠르게 습득하여 편집할 수 있는 콘텐츠 기획자가 될 것입니다.</p>
+            </div>
+        </div>
+        <div id="strength-modal-overlay" class="modal-overlay"></div>
+
+
+        <section id="portfolio" class="portfolio-section">
+            <h2 class="section-title" data-aos="fade-up">My Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100" data-portfolio-id="1">
+                    <img src="https://via.placeholder.com/400x250/7600FF/FFFFFF?text=Project+1" alt="프로젝트 1">
+                    <h3>부산영상공모전</h3>
+                    <p>클릭하여 자세한 내용을 확인하세요.</p>
+                </div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200" data-portfolio-id="2">
+                    <img src="https://via.placeholder.com/400x250/000000/FFFFFF?text=Project+2" alt="프로젝트 2">
+                    <h3>MTN 광고 공모전</h3>
+                    <p>클릭하여 자세한 내용을 확인하세요.</p>
+                </div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300" data-portfolio-id="3">
+                    <img src="https://via.placeholder.com/400x250/7600FF/FFFFFF?text=Project+3" alt="프로젝트 3">
+                    <h3>한국동서발전 프로젝트</h3>
+                    <p>클릭하여 자세한 내용을 확인하세요.</p>
+                </div>
+                </div>
+        </section>
+
+        <div id="portfolio-modal-1" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>부산영상공모전</h2>
+                <img src="https://via.placeholder.com/600x400/7600FF/FFFFFF?text=Project+1+Detail" alt="동북아 최고의 관광지, BUSAN">
+                <p><strong>제작 기간:</strong> 2024.10 - 2024.11</p>
+                <p><strong>편집 사용 툴:</strong> Premiere Pro, Photoshop</p>
+                <p><strong>공모전 설명:</strong> 이 프로젝트는 부산방송영상포럼에서 개최한 [19회 부산 영상 공모전]입니다. 글로벌 허브도시 부산, 동북아 최고의 관광지, 부산의 매력, 그린스마트 시티 부산과 기후변화 등과 같은 공모 주제를 내세워 영상 창작물을 제출하도록 하였던 공모전입니다.</p>
+                <p><strong>프로젝트 내용:</strong>부산에 놀러온 외국인 관광객을 대상으로 인터뷰하며 부산의 매력, 부산의 분위기 등등 부산에 대한 질문을 한 인터뷰 영상을 담았습니다. 이후 부산의 매력적인 장소들도 직접 촬영하여 부산이 최고의 관광지인 것을 어필하였습니다.</p>
+                <p><strong>기여도:</strong>개인 100%</p>
+                <p><strong>성과:</strong>특별상 수상</p>
+                <div class="modal-links">
+                    <a href="#" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
+                
+                </div>
+            </div>
+        </div>
+
+        <div id="portfolio-modal-2" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>MTN 광고 공모전</h2>
+                <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Project+2+Detail" alt="프로젝트 2 상세">
+                <p><strong>제작 기간:</strong> 2024.10 - 2024.11</p>
+                <p><strong>편집 사용 툴:</strong>Premiere Pro, Photoshop</p>
+                <p><strong>공모전 설명:</strong> [제24회] 대한민국 중소기업 광고 공모전은 대한민국 대학생이라면 누구나 참여할 수 있는 공모전으로 참신하고 다양한 아이디어를 중소기업에 접목시켜 직접 광고를 만들고 그 광고를 머니투데이방송을 통해 송출하는 실전 광고영상 공모전입니다.</p>
+                <p><strong>프로젝트 내용:</strong> 중소기업 중 하나인 '몬테밀라노' 브랜드의 백팩 광고를 맡게 되어 시니어층부터 MZ세대까지 모두가 재밌게 볼 수 있는 광고를 만들기 위해 코미디를 컨셉으로 광고 영상을 제작하였습니다.</p>
+                <p><strong>기여도:</strong> 개인 100%</p>
+                <p><strong>성과:</strong> 우수상 수상</p>
+                <div class="modal-links">
+                    <a href="#" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="portfolio-modal-3" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>한국동서발전 프로젝트</h2>
+                <img src="https://via.placeholder.com/600x400/7600FF/FFFFFF?text=Project+3+Detail" alt="프로젝트 3 상세">
+                <p><strong>제작 기간:</strong> 2025.05 - 2025.06</p>
+                <p><strong>편집 사용 툴:</strong> Illustrator, Effter Efect</p>
+                <p><strong>프로젝트 설명:</strong> 한국동서발전과 경성대학교 미디어콘텐츠학과가 협업을 맺어 영상을 만드는 프로젝트입니다. 여러가지 주제가 있으며, 모션그래픽 또는 실제 촬영을 통해 영상을 만들어 한국동서발전 유튜브 채널에 올리게 됩니다.</p>
+                <p><strong>프로젝트 내용:</strong> '전원 개발'이라는 주제를 맡게 되어 앞으로 생기게 될 지역과 발전소에 대한 설명을 모션그래픽 작업을 통해 알리는 것이 목표였습니다. 이를 만들기 위해 조원들과 캐릭터 제작, 배경 제작, 영상 편집 및 모션 작업을 통해 퀄리티 있는 영상 제작을 완료하였습니다.</p>
+                <p><strong>기여도:</strong> 85%</p>
+                <p><strong>성과</strong> 기업이 만족하는 영상 완성</p>
+                <div class="modal-links">
+                    <a href="#" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="portfolio-modal-overlay" class="modal-overlay"></div>
+
+        <section id="education" class="education-skills-section">
+            <h2 class="section-title white-text" data-aos="fade-up">Education & Skills</h2>
+            <div class="edu-skills-grid">
+                <div class="education-info-box" data-aos="fade-right">
+                    <h3>학력 정보</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>경성대학교 (2021 - 2025)</h3>
+                            <h4>[미디어콘텐츠학과]</h4>
+                            <p>별빛청하 포스터 광고 공모전 참가</p>
+                            <p>맞춤형 쇼핑몰 어플 'Fit Me' 창업대회 참가</p>
+                            <p>'친환경 종이 텀블러'창업대회 수상</p>
+                            <p>카풀 어플 '티키타카' 창업대회 참가</p>
+                            <p>미디어윤리 포스터 광고 공모전 참가</p>
+                            <p>감탄로드 공모전 수상</p>
+                            <p>부산영상공모전 수상</p>
+                            <p>MTN 광고 공모전 수상</p>
+                            <p>대학교 글로벌 홍보 영상 제작</p>
+                            <p>땅스부대찌개 공모전 참가</p>
+                            <p>한국동서발전 '전원 개발' 모션그래픽 제작</p>
+                            <ul>
+                                <li>부산 영도 서포터즈 1기</li>
+                                <li>영화 연출 동아리원</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-showcase-box" data-aos="fade-left">
+                    <h3>Skill Mapping</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-name">Photoshop</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"><span>0%</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-name">Illustrator</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"><span>0%</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-name">Premiere Pro</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"><span>0%</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-name">After Effects</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"><span>0%</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-name">Cinema 4D</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"><span>0%</span></div>
+
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="awards" class="awards-section">
+            <h2 class="section-title" data-aos="fade-up">Awards & Certifications</h2>
+            <div class="awards-grid">
+                <div class="award-item" data-aos="zoom-in" data-aos-delay="100" data-award-id="1">
+                    <i class="fas fa-trophy icon"></i>
+                    <h3>[대회명]</h3>
+                    <p>[수상/취득 연도]</p>
+                </div>
+                <div class="award-item" data-aos="zoom-in" data-aos-delay="200" data-award-id="2">
+                    <i class="fas fa-certificate icon"></i>
+                    <h3>[자격증명]</h3>
+                    <p>[취득 기관], [취득 연도]</p>
+                </div>
+                <div class="award-item" data-aos="zoom-in" data-aos-delay="300" data-award-id="3">
+                    <i class="fas fa-award icon"></i>
+                    <h3>[교육 이수 과정명]</h3>
+                    <p>[연도]</p>
+                </div>
+                </div>
+        </section>
+
+        <div id="award-modal-1" class="award-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>[대회명] 경성대학교 '창업대회'</h2>
+                <p><strong>수상/취득 연도:</strong> [2023.08]</p>
+                <p><strong>상세 내용:</strong> 이 상은 경성대학교에서 주최하는 창업대회에서 수상하게 된 것입니다. 친환경 종이 텀블러라는 주제로 다회용 종이컵을 실제로 만들었습니다.</p>
+                <p><strong>역할/성과:</strong> 아이디어와 제작, 수상 전 발표까지 맡아서 하였고, 상장과 상금을 받기도 하였습니다.</p>
+
+                <span class="close-button">&times;</span>
+                <h2>[대회명] '감탄로드 공모전'</h2>
+                <p><strong>수상/취득 연도:</strong> [2024.05]</p>
+                <p><strong>상세 내용:</strong> 강원특별자치도에서 폐광지역을 대표하는 브랜드인 '감탄로드'에서 폐광지역 관광지를 홍보하고자 만든 영상 공모전입니다.</p>
+                <p><strong>역할/성과:</strong> 강원도에 직접 가서 기획, 촬영, 편집까지 다 맡아서 하면서 혼자 성과를 이루어낸 공모전입니다. 이러한 노력을 통해 장려상을 수상하였습니다.</p>
+
+                <span class="close-button">&times;</span>
+                <h2>[대회명] 부산영상공모전 </h2>
+                <p><strong>수상/취득 연도:</strong> [2024.10]</p>
+                <p><strong>상세 내용:</strong> 부산영상포럼에서 개최한 영상 공모전으로, 부산의 매력을 알리는 공모전이었습니다.</p>
+                <p><strong>역할/성과:</strong> 부산의 곳곳을 돌아다니며 직접 촬영하고, 외국인 관광객을 대상으로 부산의 매력에 대한 인터뷰를 진행하여 영상에 담았습니다. 이로 인해 우수상을 받게 되었습니다.</p>
+                
+                <span class="close-button">&times;</span>
+                <h2>[대회명] MTN 광고 공모전</h2>
+                <p><strong>수상/취득 연도:</strong> [2024.11]</p>
+                <p><strong>상세 내용:</strong> MTN에서 주최한 공모전으로 대학생이라면 누구나 참여할 수 있었던 중소기업 광고 공모전입니다. 어떤 중소기업의 광고를 맡을지는 모두 랜덤으로 지정됩니다.</p>
+                <p><strong>역할/성과:</strong> 시니어세대의 브랜드라 MZ세대는 관심이 없을 거 같아 이들의 마음을 사로잡기 위한 영상을 만들었습니다. 노력 끝에 우수상을 수상하였습니다.</p>
+
+                <div class="modal-links">
+                    <a href="#" target="_blank"><i class="fas fa-link"></i> 관련 링크</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="award-modal-2" class="award-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>[자격증명] 상세</h2>
+                <p><strong>자격증명:</strong> [무인동력비행장치 4종]</p>
+                <p><strong>취득 연도:</strong> [2024.12]</p>
+                
+                <p><strong>자격증명:</strong> [무인동력비행장치 4종]</p>
+                <p><strong>취득 연도:</strong> [2024.12]</p>
+                
+                <div class="modal-links">
+                    <a href="#" target="_blank"><i class="fas fa-file-alt"></i> 증서 보기</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="award-modal-3" class="award-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>[교육 이수 과정명] 상세</h2>
+                <p><strong>교육명:</strong> [BCM 아카데미]</p>
+                <p><strong>이수 기간:</strong> [2024.06]</p>
+
+        
+                <p><strong>교육명:</strong> [R&B 프로젝트 관리]</p>
+                <p><strong>이수 기간:</strong> [2024.10 -2024.11]</p>
+                
+                <p><strong>교육명:</strong> [파이썬 기초]</p>
+                <p><strong>이수 기간:</strong> [2024.11 -2024.12]</p>
+
+                <div class="modal-links">
+                    <a href="#" target="_blank"><i class="fas fa-book-open"></i> 교육 자료</a>
+                </div>
+            </div>
+        </div>
+        <div id="award-modal-overlay" class="modal-overlay"></div>
+
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                <p><i class="fas fa-envelope contact-icon"></i> 이메일: <a href="mailto:loveme4950@naver.com">loveme4950@naver.com</a></p>
+                <p><i class="fas fa-phone contact-icon"></i> 전화번호: 010-6750-4950</p>
+                <div class="social-links">
+                    <a href="https://github.com/your-github" target="_blank" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-github social-icon"></i></a>
+                    <a href="https://linkedin.com/in/your-linkedin" target="_blank" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-linkedin social-icon"></i></a>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 콘텐츠 기획자 ㅣ 장서현 </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // 애니메이션 지속 시간 (밀리초)
+            once: true, // 스크롤 다운할 때 한 번만 재생
+        });
+    </script>
+</body>
+</html>

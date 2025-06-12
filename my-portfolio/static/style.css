@@ -1,0 +1,1115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/* G마켓 산스체 */
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.css');
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.css');
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.css');
+
+
+/* 색상 변수 정의: 보라색/검정색 그라데이션에 맞게 */
+:root {
+    --primary-color: #7600FF; /* 메인 보라색 */
+    --secondary-color: #000000; /* 메인 검정색 */
+    --text-white: #FFFFFF;
+    --text-light-grey: #e0e0e0;
+    --text-grey: #bbbbbb; /* 본문 텍스트용 회색 */
+    --dark-section-bg: #1a1a1a; /* 어두운 섹션 배경 */
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+html {
+    scroll-behavior: smooth; /* 부드러운 스크롤 */
+}
+
+body {
+    /* 기본 폰트: G마켓 산스 미디움 (기본 굵기) */
+    font-family: 'GmarketSansMedium', 'Montserrat', 'Noto Sans KR', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-white); /* 기본 글자색은 흰색 */
+    background-color: var(--secondary-color); /* 기본 배경색은 검정색 */
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+    cursor: none; /* 기본 마우스 커서 숨기기 */
+    line-height: 1.7; /* 줄 간격 */
+    font-weight: 400; /* 기본 굵기 설정 (GmarketSansMedium에 해당) */
+}
+
+/* 모든 섹션의 기본 스타일 */
+section {
+    padding: 100px 5%; /* 상하 여백, 좌우 여백 */
+    min-height: 100vh; /* 각 섹션이 최소 화면 높이 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    /* 모든 섹션에 기본 배경 그라데이션 */
+    background: linear-gradient(180deg, var(--secondary-color), var(--primary-color) 120%);
+    background-size: 100% 200%; /* 그라데이션 범위 확장 */
+    background-position: top;
+    transition: background-position 1s ease; /* 스크롤 시 배경 변경 애니메이션 */
+}
+
+/* 섹션 타이틀 */
+.section-title {
+    font-family: 'GmarketSansBold', 'Montserrat', sans-serif; /* 제목 폰트: 굵게 */
+    font-size: 3.5em; /* 크기 */
+    font-weight: 700; /* 굵기 (GmarketSansBold에 해당) */
+    margin-bottom: 60px;
+    color: var(--primary-color); /* 기본 보라색 제목 */
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* 흰색 제목 */
+.section-title.white-text {
+    color: var(--text-white); /* 흰색으로 변경 */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color); /* 보라색 밑줄 */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.section-description {
+    font-family: 'GmarketSansLight', sans-serif; /* 설명 폰트: 얇게 */
+    font-size: 1.3em; /* 크기 */
+    color: var(--text-light-grey);
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.8;
+    font-weight: 300; /* 굵기 (GmarketSansLight에 해당) */
+}
+
+/* 텍스트 스타일 */
+h1, h2, h3, h4 {
+    color: var(--text-white);
+    margin-top: 0;
+    font-weight: 700; /* 기본적으로 굵게 */
+}
+
+p {
+    font-family: 'GmarketSansLight', sans-serif; /* 일반 p 태그 폰트: 얇게 */
+    font-weight: 300;
+    color: var(--text-grey);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-white);
+}
+
+/* 커스텀 마우스 커서 */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    z-index: 9999;
+}
+
+.cursor.hover {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(118, 0, 255, 0.3); /* 보라색 투명 배경 */
+}
+
+/* 네비게이션 바 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    background-color: rgba(0, 0, 0, 0.7); /* 검정색 투명 배경 */
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.site-logo {
+    font-family: 'GmarketSansBold', sans-serif; /* 로고 폰트: 굵게 */
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--text-white);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.site-logo:hover {
+    color: var(--primary-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-icon {
+    font-size: 1.4em;
+    color: var(--text-light-grey);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: var(--primary-color);
+}
+
+.search-box {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    margin-left: 15px;
+    border-bottom: 1px solid var(--border-color); /* 검색창 하단 선 */
+}
+
+.search-box.active {
+    width: 200px;
+}
+
+.search-box input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-white);
+    padding: 5px 0;
+    font-size: 1em;
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: var(--text-grey);
+}
+
+.menu-toggle {
+    font-size: 1.8em;
+    color: var(--text-light-grey);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: 15px;
+}
+
+.menu-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* 사이드바 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px; /* 초기에는 화면 밖으로 더 확실하게 숨김 */
+    width: 280px;
+    height: 100%;
+    background-color: var(--dark-section-bg); /* 어두운 배경 */
+    color: var(--text-white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    transition: right 0.4s ease-out;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar.active {
+    right: 0; /* 활성화 시 화면 안으로 */
+}
+
+.close-sidebar {
+    font-size: 2em;
+    color: var(--text-light-grey);
+    cursor: pointer;
+    align-self: flex-end; /* 우측 상단 배치 */
+    margin-bottom: 40px;
+    transition: color 0.3s ease;
+}
+
+.close-sidebar:hover {
+    color: var(--primary-color);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.sidebar-item {
+    font-family: 'GmarketSansMedium', sans-serif; /* 사이드바 메뉴 폰트: 중간 굵기 */
+    color: var(--text-light-grey);
+    text-decoration: none;
+    font-size: 1.3em; /* 크기 */
+    font-weight: 500; /* 굵기 (GmarketSansMedium에 해당) */
+    padding: 10px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-item:hover {
+    color: var(--primary-color);
+    transform: translateX(10px);
+}
+
+.sidebar-social {
+    display: flex;
+    gap: 25px;
+    margin-top: auto; /* 하단으로 밀어냄 */
+    width: 100%;
+    justify-content: center;
+}
+
+.sidebar-social a {
+    color: var(--text-light-grey);
+    font-size: 1.8em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Hero Section (메인 화면) */
+.hero-section {
+    background: linear-gradient(180deg, var(--secondary-color), var(--primary-color) 120%); /* 검정색에서 보라색으로 그라데이션 */
+    padding-top: 100px;
+}
+
+.name-container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+    /* 텍스트 애니메이션을 위한 오버플로우 숨김 */
+    overflow: hidden;
+}
+
+/* 텍스트 등장 애니메이션 (clip-path 사용) */
+.text-reveal {
+    /* 초기에는 완전히 숨김 */
+    clip-path: inset(0 100% 0 0); /* 오른쪽에서 왼쪽으로 100% 숨김 */
+    opacity: 0;
+    animation: revealText 1.5s ease-out forwards;
+    /* data-aos-delay는 여기서 animation-delay로 사용됨 */
+    animation-delay: var(--aos-delay); /* AOS 딜레이를 CSS 변수로 사용 */
+}
+
+@keyframes revealText {
+    0% {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+    }
+    1% { /* 클립패스 시작 지점 */
+        opacity: 1;
+    }
+    100% {
+        clip-path: inset(0 0% 0 0); /* 왼쪽에서 오른쪽으로 완전히 드러남 */
+        opacity: 1;
+    }
+}
+
+/* AOS가 비활성화될 때 opacity:1을 보장 */
+[data-aos].aos-animate.text-reveal {
+    opacity: 1; /* AOS가 애니메이션을 완료하면 opacity를 1로 */
+    clip-path: inset(0 0% 0 0); /* AOS가 제어하지 않을 때 최종 상태 */
+}
+
+/* AOS의 data-aos="no-animation"을 사용하여 기본 AOS 효과는 비활성화 */
+/* 하지만 AOS가 요소를 감지하고 data-aos-delay를 변수로 설정해줌 */
+[data-aos="no-animation"] {
+    opacity: 0; /* 초기 숨김 */
+}
+[data-aos="no-animation"].aos-animate {
+    opacity: 1; /* AOS가 애니메이션 완료하면 나타남 (위에 text-reveal에서 제어) */
+}
+
+
+.korean-name {
+    font-family: 'GmarketSansBold', sans-serif; /* 한글 이름 폰트: 굵게 */
+    font-size: 10vw; /* 크기 */
+    color: var(--text-white);
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    letter-spacing: -2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.korean-name:hover {
+    transform: scale(1.03);
+}
+
+.tagline {
+    font-family: 'GmarketSansLight', sans-serif; /* 슬로건 폰트: 얇게 */
+    font-size: 1.8em; /* 크기 */
+    color: var(--text-light-grey);
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+/* 한자 이름은 슬로건 아래 중앙 정렬 */
+.chinese-name {
+    font-family: 'GmarketSansMedium', sans-serif; /* 한자 이름 폰트: 중간 굵기 */
+    font-size: 5vw; /* 크기 */
+    color: rgba(255, 255, 255, 0.4); /* 흰색 40% 투명도 */
+    margin-top: 0.5em; /* 슬로건 아래에 간격 */
+    display: block; /* 블록 요소로 만들어 중앙 정렬 가능하게 함 */
+    width: 100%; /* 너비 100% */
+    text-align: center; /* 중앙 정렬 */
+    white-space: nowrap;
+    letter-spacing: -1px;
+    transition: transform 0.3s ease;
+}
+
+.chinese-name:hover {
+    transform: scale(1.03);
+}
+
+/* About Me / Content Pilot Section */
+.about-section {
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color)); /* 보라색에서 검정색으로 그라데이션 */
+    padding-top: 100px;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 50px;
+}
+
+.strength-item {
+    background-color: rgba(0, 0, 0, 0.3); /* 반투명 검정색 배경 */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer; /* 클릭 가능하도록 */
+}
+
+.strength-item:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.strength-icon {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.strength-item:hover .strength-icon {
+    transform: rotateY(360deg);
+}
+
+.strength-item h3 {
+    font-family: 'GmarketSansMedium', sans-serif; /* 강점 제목 폰트: 중간 굵기 */
+    font-size: 1.5em; /* 크기 */
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.strength-item p {
+    font-family: 'GmarketSansLight', sans-serif; /* 강점 설명 폰트: 얇게 */
+    font-size: 1em; /* 크기 */
+    color: var(--text-light-grey);
+}
+
+/* 강점 모달 (팝업) */
+.strength-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: var(--dark-section-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1060;
+    max-width: 600px; /* 포트폴리오 모달보다 작게 */
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--text-white);
+}
+
+.strength-modal.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.strength-modal .modal-content {
+    padding: 30px;
+    position: relative;
+    text-align: left;
+}
+
+.strength-modal .modal-content h2 {
+    font-family: 'GmarketSansBold', sans-serif;
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.strength-modal .modal-content p {
+    font-family: 'GmarketSansLight', sans-serif;
+    font-size: 1.1em;
+    color: var(--text-light-grey);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+
+/* Portfolio Section */
+.portfolio-section {
+    background: linear-gradient(180deg, var(--secondary-color), var(--primary-color) 120%); /* 검정색에서 보라색으로 그라데이션 */
+    padding-top: 100px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3개 가로 정렬 */
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center; /* 그리드 항목을 중앙에 정렬 (여전히 중앙 정렬) */
+}
+
+
+.portfolio-item {
+    background-color: var(--dark-section-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* 클릭 가능하도록 */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-color); /* 호버 시 보라색 테두리 */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px; /* 직사각형 사진 높이 고정 */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05); /* 호버 시 이미지 확대 */
+}
+
+.portfolio-item h3 {
+    font-family: 'GmarketSansMedium', sans-serif; /* 포트폴리오 제목 폰트: 중간 굵기 */
+    font-size: 1.5em; /* 크기 */
+    color: var(--primary-color);
+    margin: 20px 20px 10px;
+}
+
+.portfolio-item p {
+    font-family: 'GmarketSansLight', sans-serif; /* 포트폴리오 설명 폰트: 얇게 */
+    font-size: 1em; /* 크기 */
+    color: var(--text-light-grey);
+    margin: 0 20px 20px;
+    flex-grow: 1;
+}
+
+/* 포트폴리오 모달 (팝업) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정색 오버레이 */
+    z-index: 1050;
+    display: none; /* 초기에는 숨김 */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.portfolio-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* 초기에는 작게 */
+    background-color: var(--dark-section-bg); /* 모달 배경색 */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1060;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh; /* 화면 높이 제한 */
+    overflow-y: auto; /* 내용 길면 스크롤 */
+    display: none; /* 초기에는 숨김 */
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--text-white);
+}
+
+.portfolio-modal.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* 활성화 시 원래 크기로 */
+}
+
+.modal-content {
+    padding: 30px;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-family: 'GmarketSansBold', sans-serif; /* 모달 제목 폰트: 굵게 */
+    font-size: 2.2em; /* 크기 */
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.modal-content p {
+    font-family: 'GmarketSansLight', sans-serif; /* 모달 설명 폰트: 얇게 */
+    font-size: 1.1em; /* 크기 */
+    color: var(--text-light-grey);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.modal-content p strong {
+    color: var(--text-white);
+}
+
+.modal-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.modal-links a {
+    font-family: 'GmarketSansMedium', sans-serif; /* 모달 링크 폰트: 중간 굵기 */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1em; /* 크기 */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-links a:hover {
+    background-color: var(--text-white);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.5em;
+    color: var(--text-light-grey);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+/* Education & Skills Section (학력 및 스킬) */
+.education-skills-section {
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color) 120%); /* 보라색에서 검정색으로 그라데이션 */
+    padding-top: 100px;
+}
+
+.edu-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 두 개의 박스 */
+    gap: 60px;
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 50px;
+    /* 스킬 박스 중앙 정렬을 위해 */
+    justify-content: center;
+    align-items: start; /* 위쪽 정렬 */
+}
+
+.education-info-box,
+.skills-showcase-box {
+    background-color: var(--dark-section-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    text-align: left;
+    height: fit-content; /* 내용에 맞춰 높이 조절 */
+    transition: transform 0.3s ease;
+    /* 추가: skills-showcase-box를 살짝 아래로 내리기 위한 마진 */
+    margin-top: 20px; /* 조절 가능 */
+}
+
+.education-info-box:hover,
+.skills-showcase-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.education-info-box h3,
+.skills-showcase-box h3 {
+    font-family: 'GmarketSansBold', sans-serif;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* 타임라인 스타일 (학력 정보) */
+.timeline-item {
+    position: relative;
+    padding-left: 25px; /* 선과 내용 간 간격 */
+    margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before { /* 세로선 */
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--text-white);
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 10px;
+    left: -5px; /* 선 위에 점 배치 */
+    z-index: 1;
+    box-shadow: 0 0 0 3px rgba(118, 0, 255, 0.3);
+}
+
+.timeline-content h3 {
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 1.4em;
+    color: var(--text-white); /* 학력 제목 흰색 */
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    font-family: 'GmarketSansLight', sans-serif;
+    font-size: 1.1em;
+    color: var(--text-light-grey);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-family: 'GmarketSansLight', sans-serif;
+    font-size: 1em;
+    color: var(--text-grey);
+    margin-bottom: 10px;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-content ul li {
+    font-family: 'GmarketSansLight', sans-serif;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+    color: var(--text-light-grey);
+}
+
+.timeline-content ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 스킬 어필 섹션 */
+.skill-bar-container {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.skill-name {
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 1.1em;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.skill-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    height: 15px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    /* 스킬 바 노랑/주황색 그라데이션 */
+    background: linear-gradient(to right, #FFD700, #FFA500); 
+    height: 100%;
+    width: 0; /* 초기 0% */
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end; /* 퍼센테이지 텍스트 오른쪽 정렬 */
+    align-items: center;
+    padding-right: 5px;
+    box-sizing: border-box;
+    transition: width 1.5s ease-out; /* 너비 증가 애니메이션 */
+}
+
+.skill-progress span {
+    font-family: 'Montserrat', sans-serif; /* 숫자는 깔끔한 폰트 */
+    font-size: 0.8em;
+    color: var(--secondary-color); /* 검정색 글자 */
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5); /* 밝은 그림자 */
+}
+
+
+/* Awards & Certifications Section */
+.awards-section {
+    background: linear-gradient(180deg, var(--secondary-color), var(--primary-color) 120%); /* 검정색에서 보라색으로 그라데이션 */
+    padding-top: 100px;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+}
+
+.award-item {
+    background-color: var(--dark-section-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer; /* 클릭 가능하도록 */
+}
+
+.award-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(118, 0, 255, 0.2);
+    border: 1px solid var(--primary-color); /* 호버 시 보라색 테두리 */
+}
+
+.award-item .icon {
+    font-size: 4em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.award-item:hover .icon {
+    transform: rotateY(360deg);
+}
+
+.award-item h3 {
+    font-family: 'GmarketSansMedium', sans-serif; /* 수상/자격증 제목 폰트: 중간 굵기 */
+    font-size: 1.4em; /* 크기 */
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.award-item p {
+    font-family: 'GmarketSansLight', sans-serif; /* 수상/자격증 설명 폰트: 얇게 */
+    font-size: 0.95em; /* 크기 */
+    color: var(--text-light-grey);
+}
+
+/* Awards Modals (Awards 섹션 클릭 시 나타나는 팝업) */
+.award-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: var(--dark-section-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1060;
+    max-width: 700px; /* Awards 모달은 좀 더 작게 */
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--text-white);
+}
+
+.award-modal.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.award-modal .modal-content {
+    padding: 30px;
+    position: relative;
+    text-align: left; /* 내용 정렬 */
+}
+
+.award-modal .modal-content h2 {
+    font-family: 'GmarketSansBold', sans-serif;
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.award-modal .modal-content p {
+    font-family: 'GmarketSansLight', sans-serif;
+    font-size: 1em;
+    color: var(--text-light-grey);
+    margin-bottom: 10px;
+}
+
+.award-modal .modal-links {
+    justify-content: center; /* 링크 중앙 정렬 */
+}
+
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color) 120%); /* 보라색에서 검정색으로 그라데이션 */
+    padding-top: 100px;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    color: var(--text-light-grey);
+    margin-bottom: 50px;
+}
+
+.contact-info p {
+    font-family: 'GmarketSansMedium', sans-serif; /* 연락처 정보 폰트: 중간 굵기 */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-info p i {
+    color: var(--text-white); /* 아이콘 흰색 */
+    font-size: 1.3em;
+}
+
+.contact-info a {
+    color: var(--text-white); /* 텍스트 흰색 */
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--primary-color); /* 호버 시 보라색 */
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--text-white); /* 아이콘 흰색 */
+    font-size: 2.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color); /* 호버 시 보라색 */
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-section-bg);
+    color: var(--text-light-grey);
+    padding: 30px 5%;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+    .hero-name { font-size: 8vw; }
+    .chinese-name { font-size: 4vw; }
+    .tagline { font-size: 1.6em; }
+    .section-title { font-size: 3em; }
+    .section-description { font-size: 1.2em; }
+    .portfolio-item img { height: 200px; }
+}
+
+@media (max-width: 992px) {
+    .navbar { padding: 20px 4%; }
+    .sidebar { width: 220px; }
+    .sidebar-nav { gap: 20px; }
+    .sidebar-item { font-size: 1.2em; }
+
+    .hero-name { font-size: 10vw; }
+    .chinese-name { font-size: 5vw; }
+    .tagline { font-size: 1.4em; }
+
+    .strengths-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .strength-item { padding: 25px; }
+
+    .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .portfolio-item img { height: 180px; }
+
+    .edu-skills-grid { grid-template-columns: 1fr; gap: 40px; } /* 모바일에서 세로 정렬 */
+    .education-info-box, .skills-showcase-box { margin-top: 0; } /* 모바일에서 마진 제거 */
+    .education-info-box h3, .skills-showcase-box h3 { text-align: center; } 
+    .timeline-item { width: 100%; padding-left: 0; text-align: center; } /* 타임라인 중앙 정렬 */
+    .timeline-item::before { left: 50%; margin-left: -1px; } /* 중앙 선 */
+    .timeline-dot { left: 50%; transform: translateX(-50%); } /* 중앙 점 */
+    .timeline-item:nth-child(odd) { padding-right: 0; }
+    .timeline-item:nth-child(even) { left: 0; padding-left: 0; }
+    .timeline-content { text-align: center; } /* 내용도 중앙 정렬 */
+    .timeline-content ul { text-align: center; }
+    .timeline-content ul li { padding-left: 0; }
+    .timeline-content ul li::before { content: none; } /* • 없애기 */
+
+
+    .awards-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+}
+
+@media (max-width: 768px) {
+    section { padding: 80px 3%; }
+    .section-title { font-size: 2.5em; margin-bottom: 40px; }
+    .section-description { font-size: 1.1em; margin-bottom: 40px; }
+    .site-logo { font-size: 1.4em; }
+    .menu-toggle { font-size: 1.6em; }
+    .search-icon { font-size: 1.2em; }
+
+    .hero-name { font-size: 13vw; letter-spacing: -1px; }
+    .chinese-name { font-size: 7vw; margin-top: -0.6em; }
+    .tagline { font-size: 1.2em; }
+
+    .strength-item { padding: 20px; }
+    .strength-icon { font-size: 3em; }
+
+    .portfolio-item img { height: 150px; }
+    .portfolio-item h3 { font-size: 1.3em; }
+    .modal-content { padding: 20px; }
+    .modal-content h2 { font-size: 1.8em; }
+    .modal-content img { max-height: 300px; }
+    .modal-content p { font-size: 1em; }
+    .modal-links a { padding: 10px 20px; font-size: 0.9em; }
+    .close-button { font-size: 2em; top: 10px; right: 15px; }
+
+    .timeline-content h3 { font-size: 1.4em; }
+    .timeline-content h4 { font-size: 1em; }
+    .timeline-content ul li { font-size: 0.9em; }
+
+    .awards-item .icon { font-size: 3.5em; }
+    .awards-item h3 { font-size: 1.2em; }
+    .awards-item p { font-size: 0.9em; }
+
+    .contact-info { font-size: 1em; }
+    .social-links a { font-size: 2em; }
+}
+
+@media (max-width: 480px) {
+    .navbar { padding: 15px 2%; }
+    .site-logo { font-size: 1.2em; }
+
+    .hero-name { font-size: 16vw; }
+    .chinese-name { font-size: 8vw; }
+    .tagline { font-size: 1em; }
+    .section-title { font-size: 2em; }
+
+    .strengths-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .awards-grid { grid-template-columns: 1fr; }
+
+    .contact-info p { flex-direction: column; gap: 5px; }
+    .contact-info p i { margin-right: 0; }
+}
