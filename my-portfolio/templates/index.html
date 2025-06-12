@@ -108,7 +108,7 @@
             <h2 class="section-title" data-aos="fade-up">My Portfolio</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100" data-portfolio-id="1">
-                    <img src="https://via.placeholder.com/400x250/7600FF/FFFFFF?text=Project+1" alt="프로젝트 1">
+                    <img src="{{ url_for('static', filename='부산영상공모전.png') }}" alt="프로젝트 1">
                     <h3>부산영상공모전</h3>
                     <p>클릭하여 자세한 내용을 확인하세요.</p>
                 </div>
@@ -129,7 +129,7 @@
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2>부산영상공모전</h2>
-                <img src="https://via.placeholder.com/600x400/7600FF/FFFFFF?text=Project+1+Detail" alt="동북아 최고의 관광지, BUSAN">
+                <img src="{{ url_for('static', filename='부산영상공모전.png') }}" alt="프로젝트 1"> "동북아 최고의 관광지, BUSAN">
                 <p><strong>제작 기간:</strong> 2024.10 - 2024.11</p>
                 <p><strong>편집 사용 툴:</strong> Premiere Pro, Photoshop</p>
                 <p><strong>공모전 설명:</strong> 이 프로젝트는 부산방송영상포럼에서 개최한 [19회 부산 영상 공모전]입니다. 글로벌 허브도시 부산, 동북아 최고의 관광지, 부산의 매력, 그린스마트 시티 부산과 기후변화 등과 같은 공모 주제를 내세워 영상 창작물을 제출하도록 하였던 공모전입니다.</p>
@@ -137,7 +137,8 @@
                 <p><strong>기여도:</strong>개인 100%</p>
                 <p><strong>성과:</strong>특별상 수상</p>
                 <div class="modal-links">
-                    <a href="#" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
+                    <a href="https://youtu.be/6v5AkmLWF7c" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
+                    
                 
                 </div>
             </div>
@@ -147,7 +148,7 @@
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2>MTN 광고 공모전</h2>
-                <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Project+2+Detail" alt="프로젝트 2 상세">
+                <img src="{{ url_for('static', filename='project2_detail.png') }}" alt="프로젝트 2 ">
                 <p><strong>제작 기간:</strong> 2024.10 - 2024.11</p>
                 <p><strong>편집 사용 툴:</strong>Premiere Pro, Photoshop</p>
                 <p><strong>공모전 설명:</strong> [제24회] 대한민국 중소기업 광고 공모전은 대한민국 대학생이라면 누구나 참여할 수 있는 공모전으로 참신하고 다양한 아이디어를 중소기업에 접목시켜 직접 광고를 만들고 그 광고를 머니투데이방송을 통해 송출하는 실전 광고영상 공모전입니다.</p>
@@ -155,7 +156,7 @@
                 <p><strong>기여도:</strong> 개인 100%</p>
                 <p><strong>성과:</strong> 우수상 수상</p>
                 <div class="modal-links">
-                    <a href="#" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
+                    <a href="https://youtu.be/1jhdenk4C3I" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
                     
                 </div>
             </div>
@@ -165,7 +166,7 @@
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2>한국동서발전 프로젝트</h2>
-                <img src="https://via.placeholder.com/600x400/7600FF/FFFFFF?text=Project+3+Detail" alt="프로젝트 3 상세">
+                <img src="{{ url_for('static', filename='동서발전.png') }}" alt="프로젝트 3 ">
                 <p><strong>제작 기간:</strong> 2025.05 - 2025.06</p>
                 <p><strong>편집 사용 툴:</strong> Illustrator, Effter Efect</p>
                 <p><strong>프로젝트 설명:</strong> 한국동서발전과 경성대학교 미디어콘텐츠학과가 협업을 맺어 영상을 만드는 프로젝트입니다. 여러가지 주제가 있으며, 모션그래픽 또는 실제 촬영을 통해 영상을 만들어 한국동서발전 유튜브 채널에 올리게 됩니다.</p>
@@ -173,7 +174,7 @@
                 <p><strong>기여도:</strong> 85%</p>
                 <p><strong>성과</strong> 기업이 만족하는 영상 완성</p>
                 <div class="modal-links">
-                    <a href="#" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
+                     <a href="https://youtu.be/MOK_tHirJKM" target="_blank"><i class="fas fa-link"></i> 영상 보기</a>
                     
                 </div>
             </div>
@@ -294,13 +295,12 @@
                 <p><strong>역할/성과:</strong> 부산의 곳곳을 돌아다니며 직접 촬영하고, 외국인 관광객을 대상으로 부산의 매력에 대한 인터뷰를 진행하여 영상에 담았습니다. 이로 인해 우수상을 받게 되었습니다.</p>
                 
                 <span class="close-button">&times;</span>
-                <h2>[대회명] MTN 광고 공모전</h2>
+                <h2>[수상 경력] MTN 광고 공모전</h2>
                 <p><strong>수상/취득 연도:</strong> [2024.11]</p>
                 <p><strong>상세 내용:</strong> MTN에서 주최한 공모전으로 대학생이라면 누구나 참여할 수 있었던 중소기업 광고 공모전입니다. 어떤 중소기업의 광고를 맡을지는 모두 랜덤으로 지정됩니다.</p>
                 <p><strong>역할/성과:</strong> 시니어세대의 브랜드라 MZ세대는 관심이 없을 거 같아 이들의 마음을 사로잡기 위한 영상을 만들었습니다. 노력 끝에 우수상을 수상하였습니다.</p>
 
-                <div class="modal-links">
-                    <a href="#" target="_blank"><i class="fas fa-link"></i> 관련 링크</a>
+            
                 </div>
             </div>
         </div>
@@ -308,15 +308,14 @@
         <div id="award-modal-2" class="award-modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
-                <h2>[자격증명] 상세</h2>
+                <h2>[자격증]</h2>
                 <p><strong>자격증명:</strong> [무인동력비행장치 4종]</p>
                 <p><strong>취득 연도:</strong> [2024.12]</p>
                 
                 <p><strong>자격증명:</strong> [무인동력비행장치 4종]</p>
                 <p><strong>취득 연도:</strong> [2024.12]</p>
                 
-                <div class="modal-links">
-                    <a href="#" target="_blank"><i class="fas fa-file-alt"></i> 증서 보기</a>
+            
                 </div>
             </div>
         </div>
@@ -324,7 +323,7 @@
         <div id="award-modal-3" class="award-modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
-                <h2>[교육 이수 과정명] 상세</h2>
+                <h2>[교육 이수 과정]</h2>
                 <p><strong>교육명:</strong> [BCM 아카데미]</p>
                 <p><strong>이수 기간:</strong> [2024.06]</p>
 
@@ -335,8 +334,6 @@
                 <p><strong>교육명:</strong> [파이썬 기초]</p>
                 <p><strong>이수 기간:</strong> [2024.11 -2024.12]</p>
 
-                <div class="modal-links">
-                    <a href="#" target="_blank"><i class="fas fa-book-open"></i> 교육 자료</a>
                 </div>
             </div>
         </div>
